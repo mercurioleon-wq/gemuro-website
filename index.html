@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GEMURO CONSULTORES — Asesoría Financiera y Patrimonial</title>
+<meta name="description" content="GEMURO CONSULTORES ASESORÍA FINANCIERA Y PATRIMONIAL S.C. — Promotoría de seguros en León, Guanajuato. Capacitación y certificación de agentes de seguros de vida y gastos médicos.">
+<link rel="icon" href="logo.png">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap');
+
+  :root{
+    --navy: #16305C;
+    --navy-deep: #0E2142;
+    --olive: #A9C23F;
+    --olive-dark: #8CA632;
+    --paper: #FAFAF7;
+    --ink: #1F2328;
+    --ink-soft: #4A5160;
+    --hairline: rgba(22,48,92,0.12);
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3{
+    font-family:'Fraunces', Georgia, serif;
+    color:var(--navy-deep);
+    font-weight:600;
+    letter-spacing:-0.01em;
+  }
+
+  a{ color:inherit; }
+
+  .wrap{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  /* ── Header ───────────────────────────────────────── */
+  header{
+    position:sticky; top:0; z-index:20;
+    background:rgba(250,250,247,0.88);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--hairline);
+  }
+  header .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    height:76px;
+  }
+  header img{ height:40px; width:auto; display:block; }
+  header nav{ display:flex; gap:32px; }
+  header nav a{
+    font-size:14px; font-weight:500; text-decoration:none;
+    color:var(--ink-soft);
+    transition:color .2s ease;
+  }
+  header nav a:hover{ color:var(--navy); }
+  header nav a:focus-visible{ outline:2px solid var(--olive); outline-offset:4px; border-radius:2px; }
+
+  /* ── Hero ─────────────────────────────────────────── */
+  .hero{
+    position:relative;
+    overflow:hidden;
+    padding:96px 0 88px;
+  }
+  .hero-arrow{
+    position:absolute;
+    right:-8%;
+    top:-6%;
+    width:640px;
+    max-width:70vw;
+    opacity:0.05;
+    transform:rotate(-8deg);
+    pointer-events:none;
+  }
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--olive-dark);
+    margin-bottom:22px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px; height:2px;
+    background:var(--olive);
+    display:inline-block;
+  }
+  .hero h1{
+    font-size:clamp(34px, 5vw, 54px);
+    line-height:1.08;
+    max-width:16ch;
+    margin-bottom:24px;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--olive-dark);
+  }
+  .hero p.lead{
+    font-size:18px;
+    color:var(--ink-soft);
+    max-width:52ch;
+    margin-bottom:36px;
+  }
+  .cta-row{ display:flex; gap:16px; flex-wrap:wrap; }
+  .btn{
+    display:inline-block;
+    padding:14px 28px;
+    border-radius:6px;
+    font-size:15px;
+    font-weight:600;
+    text-decoration:none;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn-primary{
+    background:var(--navy);
+    color:#fff;
+  }
+  .btn-primary:hover{ transform:translateY(-1px); box-shadow:0 8px 20px rgba(22,48,92,0.25); }
+  .btn-ghost{
+    background:transparent;
+    color:var(--navy);
+    border:1.5px solid var(--hairline);
+  }
+  .btn-ghost:hover{ border-color:var(--navy); }
+  .btn:focus-visible{ outline:2px solid var(--olive); outline-offset:3px; }
+
+  /* ── Stats strip ──────────────────────────────────── */
+  .stats{
+    border-top:1px solid var(--hairline);
+    border-bottom:1px solid var(--hairline);
+    background:#fff;
+  }
+  .stats .wrap{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+    padding:40px 28px;
+  }
+  .stat b{
+    display:block;
+    font-family:'Fraunces', serif;
+    font-size:28px;
+    color:var(--navy-deep);
+  }
+  .stat span{
+    font-size:13px;
+    color:var(--ink-soft);
+  }
+
+  /* ── Servicios ────────────────────────────────────── */
+  section{ padding:88px 0; }
+  .section-head{ max-width:56ch; margin-bottom:48px; }
+  .section-head h2{ font-size:clamp(26px,3.4vw,36px); margin-bottom:14px; }
+  .section-head p{ color:var(--ink-soft); font-size:16px; }
+
+  .grid-servicios{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:var(--hairline);
+    border:1px solid var(--hairline);
+    border-radius:10px;
+    overflow:hidden;
+  }
+  .servicio{
+    background:#fff;
+    padding:32px 28px;
+  }
+  .servicio .num{
+    font-family:'Fraunces', serif;
+    font-size:13px;
+    color:var(--olive-dark);
+    font-weight:600;
+    margin-bottom:14px;
+    display:block;
+  }
+  .servicio h3{ font-size:19px; margin-bottom:10px; }
+  .servicio p{ font-size:14.5px; color:var(--ink-soft); }
+
+  /* ── Nosotros / franja navy ───────────────────────── */
+  .franja{
+    background:var(--navy-deep);
+    color:#fff;
+  }
+  .franja h2{ color:#fff; }
+  .franja .section-head p{ color:rgba(255,255,255,0.68); }
+  .franja-grid{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:56px;
+    align-items:start;
+  }
+  .franja-grid p{
+    color:rgba(255,255,255,0.78);
+    font-size:15.5px;
+    margin-bottom:16px;
+  }
+  .datos-legales{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:10px;
+    padding:28px;
+  }
+  .datos-legales dt{
+    font-size:11.5px;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:var(--olive);
+    margin-top:18px;
+  }
+  .datos-legales dt:first-child{ margin-top:0; }
+  .datos-legales dd{
+    font-size:14.5px;
+    color:#fff;
+    margin-top:4px;
+    line-height:1.5;
+  }
+
+  /* ── Contacto ─────────────────────────────────────── */
+  .contacto-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:28px;
+  }
+  .contacto-card{
+    border:1px solid var(--hairline);
+    border-radius:10px;
+    padding:26px;
+    background:#fff;
+  }
+  .contacto-card .label{
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:var(--olive-dark);
+    font-weight:600;
+    margin-bottom:8px;
+  }
+  .contacto-card a{
+    text-decoration:none;
+    color:var(--navy-deep);
+    font-weight:500;
+    font-size:15px;
+  }
+  .contacto-card a:hover{ color:var(--olive-dark); }
+
+  /* ── Footer ───────────────────────────────────────── */
+  footer{
+    border-top:1px solid var(--hairline);
+    padding:32px 0;
+  }
+  footer .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  footer img{ height:26px; opacity:0.85; }
+  footer small{ color:var(--ink-soft); font-size:12.5px; }
+
+  @media (max-width: 760px){
+    header nav{ display:none; }
+    .franja-grid{ grid-template-columns:1fr; }
+    .grid-servicios{ grid-template-columns:1fr; }
+    .stats .wrap{ grid-template-columns:1fr; text-align:center; }
+    .contacto-grid{ grid-template-columns:1fr; }
+    .hero{ padding:64px 0 56px; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    .btn{ transition:none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <img src="logo.png" alt="GEMURO CONSULTORES">
+    <nav>
+      <a href="#servicios">Servicios</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <svg class="hero-arrow" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M20 170 L100 90 L140 130 L180 20" stroke="#16305C" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M150 20 L180 20 L180 50" stroke="#16305C" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  <div class="wrap">
+    <span class="eyebrow">Promotoría de Seguros · León, Guanajuato</span>
+    <h1>Formamos asesores que <em>construyen patrimonio</em>, no solo pólizas.</h1>
+    <p class="lead">GEMURO CONSULTORES capacita y certifica agentes de seguros de vida y gastos médicos ante la CNSF, y acompaña a nuestra red de asesores con herramientas propias de gestión comercial.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#contacto">Contáctanos</a>
+      <a class="btn btn-ghost" href="#servicios">Conoce qué hacemos</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="wrap">
+    <div class="stat">
+      <b>10+</b>
+      <span>Asesores activos en formación y operación</span>
+    </div>
+    <div class="stat">
+      <b>CNSF</b>
+      <span>Certificación oficial como agente de seguros</span>
+    </div>
+    <div class="stat">
+      <b>Vida &amp; GMM</b>
+      <span>Especialización en seguros de vida y gastos médicos</span>
+    </div>
+  </div>
+</div>
+
+<section id="servicios">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Qué hacemos</h2>
+      <p>Tres frentes de trabajo, un mismo objetivo: asesores mejor preparados y con más tiempo para lo comercial.</p>
+    </div>
+    <div class="grid-servicios">
+      <div class="servicio">
+        <span class="num">Capacitación</span>
+        <h3>Certificación CNSF</h3>
+        <p>Preparamos a personas con el perfil ideal para obtener su certificación como agentes de seguros de vida y gastos médicos.</p>
+      </div>
+      <div class="servicio">
+        <span class="num">Colocación</span>
+        <h3>Gestión de pólizas</h3>
+        <p>Acompañamos a nuestros asesores en la colocación de pólizas, con procesos y herramientas propias de la promotoría.</p>
+      </div>
+      <div class="servicio">
+        <span class="num">Tecnología</span>
+        <h3>Herramientas digitales</h3>
+        <p>Desarrollamos plataformas internas para automatizar el seguimiento de actividad comercial de nuestro equipo de asesores.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="franja" id="nosotros">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Nosotros</h2>
+      <p>Una promotoría constituida legalmente, operando en León, Guanajuato.</p>
+    </div>
+    <div class="franja-grid">
+      <div>
+        <p>GEMURO CONSULTORES ASESORÍA FINANCIERA Y PATRIMONIAL S.C. es una promotoría de seguros dedicada a formar y acompañar a asesores especializados en seguros de vida y gastos médicos mayores.</p>
+        <p>Nuestro trabajo combina la capacitación técnica exigida por la CNSF con procesos internos propios que buscan liberar a nuestros asesores de carga administrativa, para que dediquen más tiempo a la actividad comercial y a sus clientes.</p>
+      </div>
+      <dl class="datos-legales">
+        <dt>Razón social</dt>
+        <dd>GEMURO CONSULTORES ASESORÍA FINANCIERA Y PATRIMONIAL S.C.</dd>
+        <dt>Tipo de registro</dt>
+        <dd>Sociedad Civil — Registro Público de la Propiedad, León, Guanajuato</dd>
+        <dt>Domicilio</dt>
+        <dd>Paseo de los Insurgentes 3248, int. 104, Col. Cumbres del Campestre, León, Guanajuato, C.P. 37128</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Contacto</h2>
+      <p>¿Quieres saber más sobre certificarte como asesor, o cómo trabajamos? Escríbenos.</p>
+    </div>
+    <div class="contacto-grid">
+      <div class="contacto-card">
+        <div class="label">Correo</div>
+        <a href="mailto:contacto@gemuroconsultores.com">contacto@gemuroconsultores.com</a>
+      </div>
+      <div class="contacto-card">
+        <div class="label">Ubicación</div>
+        <a href="#" onclick="return false;">León, Guanajuato, México</a>
+      </div>
+      <div class="contacto-card">
+        <div class="label">Redes</div>
+        <a href="https://www.facebook.com/gemuroconsultores/" target="_blank" rel="noopener">Facebook — GEMURO Consultores</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="logo.png" alt="GEMURO CONSULTORES">
+    <small>© 2026 GEMURO CONSULTORES ASESORÍA FINANCIERA Y PATRIMONIAL S.C. Todos los derechos reservados.</small>
+  </div>
+</footer>
+
+</body>
+</html>
