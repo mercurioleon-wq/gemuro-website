@@ -225,14 +225,32 @@ margin:0 auto;
 border-radius:14px;
 overflow:hidden;
 box-shadow:0 12px 32px rgba(22,48,92,0.14);
-background:#000;
+background:linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%);
 }
-.video-wrap-vertical iframe{
-display:block;
-width:100%;
-height:640px;
-border:0;
+.video-cta{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+gap:16px;
+padding:64px 28px;
+text-decoration:none;
+color:#fff;
+text-align:center;
 }
+.video-cta .play-circle{
+width:64px; height:64px;
+border-radius:50%;
+background:rgba(255,255,255,0.14);
+display:flex;
+align-items:center;
+justify-content:center;
+transition:transform .2s ease, background .2s ease;
+}
+.video-cta .play-circle svg{ width:22px; height:22px; margin-left:3px; }
+.video-cta:hover .play-circle{ background:var(--olive); transform:scale(1.06); }
+.video-cta strong{ font-family:'Fraunces', serif; font-size:18px; font-weight:600; }
+.video-cta span{ font-size:13.5px; color:rgba(255,255,255,0.7); }
 .video-wrap-horizontal{
 position:relative;
 width:100%;
@@ -306,7 +324,6 @@ header nav{ display:none; }
 .stats .wrap{ grid-template-columns:1fr; text-align:center; }
 .contacto-grid{ grid-template-columns:1fr; }
 .hero{ padding:64px 0 56px; }
-.video-wrap-vertical iframe{ height:560px; }
 }
 @media (prefers-reduced-motion: reduce){
 html{ scroll-behavior:auto; }
@@ -394,7 +411,13 @@ html{ scroll-behavior:auto; }
 <p>Lo que dicen quienes ya confiaron en nosotros para proteger su patrimonio.</p>
 </div>
 <div class="video-wrap-vertical">
-<iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1733341730707805&show_text=false&width=360" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" title="Testimonio de cliente GEMURO CONSULTORES"></iframe>
+<a class="video-cta" href="https://www.facebook.com/reel/1733341730707805" target="_blank" rel="noopener">
+<span class="play-circle">
+<svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
+</span>
+<strong>Ver testimonio en Facebook</strong>
+<span>Se abre en una nueva pestaña</span>
+</a>
 </div>
 </div>
 </section>
