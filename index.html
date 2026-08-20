@@ -431,7 +431,7 @@ html{ scroll-behavior:auto; }
 <p>Conoce cómo es formarte y crecer como asesor con GEMURO CONSULTORES.</p>
 </div>
 <div class="video-wrap-horizontal">
-<iframe src="https://www.youtube.com/embed/dp2Uk78p1ts" title="Atracción de talento GEMURO CONSULTORES" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe id="yt-talento" src="https://www.youtube.com/embed/dp2Uk78p1ts?enablejsapi=1" title="Atracción de talento GEMURO CONSULTORES" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 </div>
 </section>
@@ -443,7 +443,7 @@ html{ scroll-behavior:auto; }
 <p>Desarrollamos herramientas propias para que nuestros asesores dediquen más tiempo a lo comercial, y menos a la carga administrativa.</p>
 </div>
 <div class="video-wrap-horizontal">
-<iframe src="https://www.youtube.com/embed/WlbFPU2h8No" title="AgentFlow — Tecnología GEMURO CONSULTORES" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe id="yt-tecnologia" src="https://www.youtube.com/embed/WlbFPU2h8No?enablejsapi=1" title="AgentFlow — Tecnología GEMURO CONSULTORES" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 </div>
 </section>
@@ -514,5 +514,33 @@ html{ scroll-behavior:auto; }
 </div>
 </footer>
 
+<script>
+// Al reproducir cualquiera de los videos de YouTube incrustados, se
+// le pide al reproductor la mejor calidad disponible (hd1080). Esto
+// no es una garantía absoluta — YouTube puede ajustar la calidad
+// según la conexión real del visitante para evitar que el video se
+// trabe — pero es el método oficial más confiable que existe, ya
+// que el parámetro "vq" en el link (usado en muchos tutoriales
+// antiguos) está descontinuado por Google y ya no funciona.
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+document.body.appendChild(tag);
+
+function onYouTubeIframeAPIReady() {
+  ['yt-talento', 'yt-tecnologia'].forEach(function (id) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    new YT.Player(id, {
+      events: {
+        'onStateChange': function (event) {
+          if (event.data === YT.PlayerState.PLAYING) {
+            event.target.setPlaybackQuality('hd1080');
+          }
+        }
+      }
+    });
+  });
+}
+</script>
 </body>
 </html>
