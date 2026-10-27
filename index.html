@@ -261,6 +261,24 @@ transition:transform .2s ease, background .2s ease;
 .video-cta:hover .play-circle{ background:var(--olive); transform:scale(1.06); }
 .video-cta strong{ font-family:'Fraunces', serif; font-size:18px; font-weight:600; }
 .video-cta span{ font-size:13.5px; color:rgba(255,255,255,0.7); }
+.video-cta.con-miniatura{
+aspect-ratio:9/16;
+padding:28px;
+justify-content:flex-end;
+background:
+linear-gradient(180deg, rgba(10,24,48,0.10) 0%, rgba(10,24,48,0.25) 45%, rgba(10,24,48,0.88) 100%),
+url('testimonio-facebook.jpg') 72% center/cover no-repeat;
+}
+.video-cta.con-miniatura .play-circle{
+position:absolute; top:50%; left:50%;
+transform:translate(-50%,-50%);
+width:76px; height:76px;
+background:rgba(255,255,255,0.22);
+backdrop-filter:blur(4px);
+}
+.video-cta.con-miniatura:hover .play-circle{ transform:translate(-50%,-50%) scale(1.06); }
+.video-cta.con-miniatura .play-circle svg{ width:26px; height:26px; }
+.video-wrap-vertical{ position:relative; }
 .video-wrap-horizontal{
 position:relative;
 width:100%;
@@ -434,7 +452,7 @@ html{ scroll-behavior:auto; }
 </div>
 <p class="mas-testimonios">Más testimonios</p>
 <div class="video-wrap-vertical">
-<a class="video-cta" href="https://www.facebook.com/reel/1733341730707805" target="_blank" rel="noopener">
+<a class="video-cta con-miniatura" href="https://www.facebook.com/reel/1733341730707805" aria-label="Ver testimonio de cliente en Facebook" target="_blank" rel="noopener">
 <span class="play-circle">
 <svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
 </span>
