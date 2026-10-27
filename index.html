@@ -280,6 +280,14 @@ width:100%;
 height:100%;
 border:0;
 }
+.mas-testimonios{
+text-align:center;
+margin:40px 0 16px;
+font-size:12px;
+text-transform:uppercase;
+letter-spacing:0.08em;
+color:var(--olive-dark);
+}
 .seccion-alt{ background:#fff; border-top:1px solid var(--hairline); border-bottom:1px solid var(--hairline); }
 /* ── Contacto ─────────────────────────────────────── */
 .contacto-grid{
@@ -421,6 +429,10 @@ html{ scroll-behavior:auto; }
 <h2>Testimonios de clientes</h2>
 <p>Lo que dicen quienes ya confiaron en nosotros para proteger su patrimonio.</p>
 </div>
+<div class="video-wrap-horizontal">
+<iframe id="yt-testimonio" src="https://www.youtube.com/embed/VVA7Qh7Bs-U?enablejsapi=1" title="Testimonio de cliente — GEMURO CONSULTORES" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+<p class="mas-testimonios">Más testimonios</p>
 <div class="video-wrap-vertical">
 <a class="video-cta" href="https://www.facebook.com/reel/1733341730707805" target="_blank" rel="noopener">
 <span class="play-circle">
@@ -536,7 +548,7 @@ tag.src = "https://www.youtube.com/iframe_api";
 document.body.appendChild(tag);
 
 function onYouTubeIframeAPIReady() {
-  ['yt-talento', 'yt-tecnologia'].forEach(function (id) {
+  ['yt-testimonio', 'yt-talento', 'yt-tecnologia'].forEach(function (id) {
     var el = document.getElementById(id);
     if (!el) return;
     new YT.Player(id, {
